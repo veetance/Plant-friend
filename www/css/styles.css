@@ -18,7 +18,9 @@
     display: none;
 }
 
-
+#plant path {
+transition: 2s;
+}
 
 
 
