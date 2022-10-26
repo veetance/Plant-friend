@@ -28,7 +28,7 @@ function dryout() {
   checkhealth();
   var watertimer = setTimeout(dryout, 500);
 }
-dryout();
+// dryout();
 
 function starving() {
   food--;
@@ -36,7 +36,7 @@ function starving() {
   checkhealth();
   var foodtimer = setTimeout(starving, 500)
 }
-starving();
+// starving();
 
 function checkhealth() {
   if (waterlevel <= nowater || waterlevel >= drowning || food <= nofood) {
@@ -76,9 +76,22 @@ $("#trim-me").on("click", function () {
 trimmed = true;
 $("#scissors").fadeIn().delay(3000).fadeOut();
 $("#trim").fadeOut();
+})
+
+
+$(".panel").on("panel:open", function () {
+var motivation = ["I'm worth it","Thanks for trying", "Be leaf in yourself" ];
+var indexnum = Math.floor(Math.random() * motivation.length)
+console.log(indexnum);
+$("#plant-quote").text(motivation[indexnum]);
 
 })
 
+$("#name-input").on("change", function () {
+  console.log("name changed!");
+  var plantname = $(this).val();
+  $(".name-display").text(plantname);
+})
 
 
 
